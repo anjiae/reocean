@@ -22,7 +22,7 @@
   <script src="https://kit.fontawesome.com/3d9979192f.js" crossorigin="anonymous"></script>
 
   <!-- kakao map -->
-  
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fb1562a730f6b3cc0be10d178c374127"></script>
 
   <!-- user css -->
   <link rel="stylesheet" type='text/css' href="css/style.css">
@@ -45,6 +45,11 @@
           <div class="navbar__container">
             <div class="navbar__logo">
               <h1>RE:OCEAN</h1>
+              <p>
+                - 강원도 양양 죽도해변 바닷가 공방 운영<br>
+                - 바다유리와 조개로 업싸이클링한 석고방향제, 마그넷, 캔들, 디퓨져 판매<br>
+                - 바닷가에 비치코밍 체험하고 수집한 해양쓰레기를 업싸이클링하는 원데이클래스 운영
+              </p>
             </div>
           </div>
         </nav>
@@ -65,12 +70,7 @@
               <div class="about__content">
                 <div class="about__left">
                     <div class="about__left__description">
-                      <p> 
-                        - 강원도 양양 죽도해변 바닷가 공방 운영<br>
-                        <br>
-                        - 바다유리와 조개로 업싸이클링한 석고방향제, 마그넷, 캔들, 디퓨져 판매<br><br>
-                        - 바닷가에 비치코밍 체험하고 수집한 해양쓰레기를 업싸이클링하는 원데이클래스 운영<br>
-                        <br>
+                      <p>
                         하는 일을 적는 것도 좋지만, 리오션이 추구하는 리오션만의 philosophy 혹은, 슬로건 등
                         리오션을 소개할 수 있는 그런 문구를 적으면 좋을 것 같아요.
                       </p>
@@ -89,7 +89,7 @@
           <div class="section__container store__wrap">
             <div class="shop">
               <div class="shop__text">
-                <h2>RE:OCEAN</h2>
+                <!-- <h2>리오션구입</h2> -->
               <p>바다에서 주운 바다유리와 조개 등으로 만든 100% 핸드메이드 업싸이클링 제품을 판매 합니다.</p>
               </div>
               <a href="https://smartstore.naver.com/reocean/" target="_blank" class="go__shop">
@@ -104,7 +104,7 @@
           <div class="section__container">
             <!-- section title -->
             <div class="section__title">
-              <h2>리오션 서비스</h2>
+              <h2>리오션 하는 일</h2>
             </div>
             <div class="work__slide__wrap">
               <ul class="work__slide">
@@ -170,6 +170,68 @@
             </div>
           </div>
         </section>
+        <!-- oneday class -->
+        <section id="class" class="section">
+          <div class="section__container">
+            <!-- section title -->
+            <div class="section__title class__title">
+              <h2>원데이클래스</h2>
+            </div>
+
+            <div class="class__container">
+              <ul class="class__list">
+                <li class="class__list__item">
+                  <div class="class__item__icon">
+                    <img src="imgs/class/sample.jpg" alt="">
+                  </div>
+                  <div class="class__item__description">
+                    <h3>방향제 & 바다유리액자</h3>
+                    <p>
+                      수업이 어떻게 진행되는지 간단한 설명을 적어줘요
+                      수업 내용, 이용 시 주의 사항이라던지 등등
+                    </p>
+                  </div>
+                </li>
+                <li class="class__list__item">
+                  <div class="class__item__icon">
+                    <img src="imgs/class/sample.jpg" alt="">
+                  </div>
+                  <div class="class__item__description">
+                    <h3>캔들 & 바다유리액자</h3>
+                    <p>
+                      수업이 어떻게 진행되는지 간단한 설명을 적어줘요
+                      수업 내용, 이용 시 주의 사항이라던지 등등
+                    </p>
+                  </div>
+                </li>
+                <li class="class__list__item">
+                  <div class="class__item__icon">
+                    <img src="imgs/class/sample.jpg" alt="">
+                  </div>
+                  <div class="class__item__description">
+                    <h3>모빌 & 바다유리액자</h3>
+                    <p>
+                      수업이 어떻게 진행되는지 간단한 설명을 적어줘요
+                      수업 내용, 이용 시 주의 사항이라던지 등등
+                    </p>
+                  </div>
+                </li>
+                <li class="class__list__item">
+                  <div class="class__item__icon">
+                    <img src="imgs/class/sample.jpg" alt="">
+                  </div>
+                  <div class="class__item__description">
+                    <h3>디퓨져 & 바다유리액자</h3>
+                    <p>
+                      수업이 어떻게 진행되는지 간단한 설명을 적어줘요
+                      수업 내용, 이용 시 주의 사항이라던지 등등
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
         <!-- Contact -->
         <section id="contact" class="section">
           <div class="section__container">
@@ -177,13 +239,12 @@
             <div class="section__title">
               <h2>물마루공방</h2>
             </div>
-
             <div class="contact__container">
-              <div class="contact__img">
-                <img src="imgs/moolmaru.jpg" alt="">
+              <div class="contact__img__box">
+                <!-- <img src="imgs/moolmaru.jpg" alt=""> -->
               </div>
-              <div class="contact__map">
-                <div id="map">지도를 넣어볼까해요</div>
+              <div class="contact__map__box">
+                <div id="map"></div>
               </div>
             </div>
             <div class="contact__text">
@@ -199,7 +260,14 @@
     <!-- FOOTER -->
     <footer id="footer">
       <div>
-
+        <a href="https://www.instagram.com/reocean_yy/" class="f__sns" target="_blank">
+          <i class="fab fa-instagram"></i>
+          <span>reocean_yy</span>
+        </a>
+        <div class="copy">
+          <p>**이 페이지는 chrome에 최적화 되어 있습니다.**</p>
+          <p>Copyright &copy : 2020 created by Re:ocean</p>
+      </div>
       </div>
     </footer>
 
