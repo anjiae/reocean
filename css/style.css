@@ -281,40 +281,6 @@
   right: -10%;
 }
 
-/* Contact */
-.contact__container {
-  display: flex;
-  justify-content: space-between;
-  height: 500px;
-}
-
-.contact__img__box, .contact__map__box {
-  flex-basis: 50%;
-}
-
-.contact__img__box {
-  background: url(../imgs/moolmaru.jpg) no-repeat center/cover;
-}
-
-#map {
-  width: 100%;
-  height: 100%;
-}
-
-.contact__text {
-  padding: 35px;
-  
-}
-
-.contact__text p {
-  font-size: var(--font-regular);
-  color: var(--color-dark-blue);
-}
-
-address {
-  margin-top: 30px;
-}
-
 /* 원데이클래스 */
 
 #class {
@@ -371,6 +337,42 @@ address {
   font-size: var(--font-small);
   color: var(--color-main-beige);
 }
+
+
+/* Contact */
+.contact__container {
+  display: flex;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.contact__img__box, .contact__map__box {
+  flex-basis: 50%;
+}
+
+.contact__img__box {
+  background: url(../imgs/moolmaru.jpg) no-repeat center/cover;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.contact__text {
+  padding: 35px;
+  
+}
+
+.contact__text p {
+  font-size: var(--font-regular);
+  color: var(--color-dark-blue);
+}
+
+address {
+  margin-top: 30px;
+}
+
 
 /* footer */
 #footer {
