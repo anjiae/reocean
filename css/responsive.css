@@ -50,19 +50,6 @@
     text-align: center;
   }
 
-  .contact__container {
-    flex-direction: column;
-    height: 860px;
-  }
-
-  .contact__img__box, .contact__map__box {
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .contact__img__box {
-    margin-bottom: 20px;
-  }
 
   .class__item__icon {
     display: block;
@@ -77,6 +64,22 @@
     padding: 10px;
     text-align: center;
   }
+
+  .contact__container {
+    flex-direction: column;
+    height: 860px;
+  }
+
+  .contact__img__box, .contact__map__box {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .contact__img__box {
+    margin-bottom: 20px;
+  }
+
+  
 
 }
 
@@ -97,5 +100,15 @@
 
   .contact__container {
     height: 680px;
+  }
+
+  .arrow-up {
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+    line-height: 35px;
+  
   }
 }
