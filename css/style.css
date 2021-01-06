@@ -219,7 +219,8 @@
 
 .work__slide {
   position: relative;
-  width: 1920px;
+  transition: all 0.5s ease-out;
+  /* width: 1920px; */
 }
 
 .work__slide::after {
@@ -232,7 +233,7 @@
   float: left;
   width: 300px;
   text-align: center;
-  height: 550px;
+  height: 500px;
   margin: 0 10px;
 }
 
@@ -270,7 +271,7 @@
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 80px;
-  color: var(--color-dark-blue);
+  color: var(--color-light-white);
 }
 
 .work__controls span:hover {

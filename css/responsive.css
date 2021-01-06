@@ -1,10 +1,16 @@
 @charset "utf-8";
 
 @media all and (max-width: 1200px){
+  /* 원데이클래스 전체너비 변경 */
   .class__list__item {
     float: none;
     width: 100%;
     margin: 10px auto;
+  }
+
+  .work__slide__item {
+    width: 300px;
+    height: 500px;
   }
 }
 
@@ -19,24 +25,35 @@
   --font-micro: 0.8em;
   }
 
+  /* home 배경화면 높이변경 */
   #home {
     height: 590px;
   }
 
+  /* contact */
   .contact__container {
     height: 420px;
   }
 
 
+  .work__slide__item {
+    /* float: left; */
+    width: 250px;
+    height: 450px;
+  }
+  .work__item__img {
+    height: 250px;
+  }
 }
 
 @media all and (max-width:768px) {
 
-  
+   /* home 배경화면 높이변경 */
   #home {
     height: 420px;
   }
 
+  /* About reocean */
   .about__content {
     flex-direction: column-reverse;
   }
@@ -51,6 +68,7 @@
   }
 
 
+  /* 원데이클래스  */
   .class__item__icon {
     display: block;
     width: 150px;
@@ -65,6 +83,7 @@
     text-align: center;
   }
 
+  /* contact */
   .contact__container {
     flex-direction: column;
     height: 860px;
@@ -94,10 +113,31 @@
   --font-micro: 0.75em;
   }
 
+   /* home 배경화면 높이변경 */
   #home {
     height: 300px;
   }
 
+  /* slide */
+  
+  .work__slide__item {
+    width: 200px;
+    height: 380px;
+  }
+
+  .work__item__img {
+    height: 200px;
+  }
+
+  .work__controls span {
+    font-size: 50px;
+  }
+  
+  .work__controls span:hover {
+    font-size: 60px;
+  }
+
+  /* contact */
   .contact__container {
     height: 680px;
   }

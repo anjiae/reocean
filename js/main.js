@@ -1,11 +1,47 @@
 "use strict";
-//work slide
-const slider = document.querySelector('.work__slide'),
-      slideItemx = document.querySelectorAll('.work__slide__item'),
-      currentIdx = 0,
-      slideLength = slideItemx.length,
-      prevBtn = document.querySelector('.prev'),
+//Work Slides
+const slideItem = document.querySelectorAll('.work__slide__item');
+const slider = document.querySelector('.work__slide');  
+const sliderTotal = slideItem.length;
+let slideItemW = 300;
+const margin = 20;
+const prevBtn = document.querySelector('.prev'),
       nextBtn = document.querySelector('.next');
+//ul너비지정
+slider.style.width = (slideItemW + margin) * sliderTotal +'px';
+
+let currentIdx;
+const winW = window.innerWidth;
+function moveSlide(num){
+    currentIdx = num;
+    slider.style.left = -num * (slideItemW + margin) + 'px';
+    if(winW > 1024) {
+      slideItemW = 300;
+    }else if (winW > 520) {
+      slideItemW = 250;
+    }else {
+      slideItemW = 200;
+    }
+}
+
+
+nextBtn.addEventListener('click', ()=> {
+  if(currentIdx < sliderTotal -4){
+    moveSlide(currentIdx +1);
+  }else {
+    moveSlide(0);
+  }
+});
+
+prevBtn.addEventListener('click', ()=> {
+  if(currentIdx > 0){
+    moveSlide(currentIdx -1);
+  }else {
+    moveSlide(0);
+  }
+  
+});
+
 
 
 
