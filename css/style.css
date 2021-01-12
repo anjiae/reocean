@@ -14,8 +14,8 @@
   --color-point-aprcot: #ed8c72;
 
   /* font-size */
-  --font-x-large: 6em;
-  --font-large: 2.5em;
+  --font-x-large: 7em;
+  --font-large: 2.7em;
   --font-midium: 2em;
   --font-regular: 1.25em;
   --font-small: 1em;
@@ -33,9 +33,9 @@
 #home {
   z-index: 1;
   position: relative;
-  height: 740px;
-  opacity: 0.8;
+  height: 100vh;
   margin: 0 auto;
+  opacity: 0.9;
 }
 
 .home__bg {
@@ -58,30 +58,54 @@
 }
 
 .navbar__logo {
-  margin-top: 20%;
+  margin-top: 50%;
   text-align: center;
-  font-family: 'Nanum Pen Script', cursive;
   color: var(--color-dark-blue);
+  padding: 40px;
 }
 
 .navbar__logo h1 {
   font-size: var(--font-x-large);
   font-weight: var(--weight-bold);
+  font-family: 'Nanum Pen Script', cursive;
 }
 
-.navbar__logo p {
-  margin: 0 auto;
-  font-size: var(--font-regular);
+.navbar__logo span {
+  display: block;
+  margin: 20px auto;
+  font-size: var(--font-large);
   font-weight: var(--weight-semi-bold);
   color: #fff;
   text-align:center;
+  font-family: 'Nanum Pen Script', cursive;
+  position: relative;
+  opacity: 0;
+  top: 1em;
+  animation: animateOverlay 1s ease-in-out forwards;
 }
 
+.navbar__logo span:nth-child(3n) { animation-delay: 2s;}
+.navbar__logo span:nth-child(3n+1) { animation-delay: 0s;}
+.navbar__logo span:nth-child(3n+2) { animation-delay: 1s;}
+
+@keyframes animateOverlay {
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
 /* Main */
 #main {
   position: relative;
   background-color: var(--color-light-white);
 }
+
+/* main event */
+/* scroll event */
+.scroll-event {
+  transition: transform 0.8s, opacity 1s;
+}
+
 
 /* section common */
 .section {
@@ -144,7 +168,6 @@
 
 .about__right {
   flex-basis: 45%;
-  
 }
 
 .about__right__img {

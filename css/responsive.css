@@ -25,11 +25,6 @@
   --font-micro: 0.8em;
   }
 
-  /* home 배경화면 높이변경 */
-  #home {
-    height: 590px;
-  }
-
   /* contact */
   .contact__container {
     height: 420px;
@@ -48,9 +43,8 @@
 
 @media all and (max-width:768px) {
 
-   /* home 배경화면 높이변경 */
-  #home {
-    height: 420px;
+  .navbar__logo {
+    margin-top: 70%;
   }
 
   /* About reocean */
@@ -111,11 +105,6 @@
   --font-regular: 0.9em;
   --font-small: 0.8em;
   --font-micro: 0.75em;
-  }
-
-   /* home 배경화면 높이변경 */
-  #home {
-    height: 300px;
   }
 
   /* slide */

@@ -1,4 +1,28 @@
 "use strict";
+
+//About img event
+function ElBotton(elem, triggerDiff) {
+  const {top} = elem.getBoundingClientRect();
+  const {innerHeight} = window;
+  return top > innerHeight + (triggerDiff || 0);
+}
+
+function handleScroll() {
+  const elems = document.querySelectorAll('.scroll-event');
+  elems.forEach(ele => {
+    if(ElBotton(ele, -280)) {
+      ele.style.opacity = '0';
+      ele.style.transform = 'translateX(100px)';
+    } else {
+      ele.style.opacity = '1';
+      ele.style.transform = 'translateX(0)';
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScroll);
+
+
 //Work Slides
 const slideItem = document.querySelectorAll('.work__slide__item');
 const slider = document.querySelector('.work__slide');  
