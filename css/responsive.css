@@ -43,10 +43,6 @@
 
 @media all and (max-width:768px) {
 
-  .navbar__logo {
-    margin-top: 70%;
-  }
-
   /* About reocean */
   .about__content {
     flex-direction: column-reverse;
