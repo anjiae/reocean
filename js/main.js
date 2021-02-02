@@ -1,5 +1,5 @@
 "use strict";
-
+//--------------------------------------------------------//
 //About img event
 function ElBotton(elem, triggerDiff) {
   const {top} = elem.getBoundingClientRect();
@@ -22,8 +22,8 @@ function handleScroll() {
 
 window.addEventListener('scroll', handleScroll);
 
-
-//Work Slides
+//--------------------------------------------------------//
+//REOCEAN WORK SLIDES
 const slideItem = document.querySelectorAll('.work__slide__item');
 const slider = document.querySelector('.work__slide');  
 const sliderTotal = slideItem.length;
@@ -66,11 +66,8 @@ prevBtn.addEventListener('click', ()=> {
   
 });
 
-
-
-
-
-//map
+//--------------------------------------------------------//
+//KAKAO MAP
 	var container = document.getElementById('map');
 	var options = {
 		center: new kakao.maps.LatLng(37.9685396476989, 128.759549653821),
@@ -88,6 +85,8 @@ var marker = new kakao.maps.Marker({
 // 마커가 지도 위에 표시되도록 설정합니다
 marker.setMap(map);
 
+
+//--------------------------------------------------------//
 //Show "arrow up" button
 const arrowBtn = document.querySelector('.arrow-up');
 const homeHeight = home.getBoundingClientRect().height;
