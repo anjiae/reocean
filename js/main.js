@@ -68,17 +68,18 @@ prevBtn.addEventListener('click', ()=> {
 
 //--------------------------------------------------------//
 //KAKAO MAP
-	var container = document.getElementById('map');
-	var options = {
+	const container = document.getElementById('map');
+	const options = {
 		center: new kakao.maps.LatLng(37.9685396476989, 128.759549653821),
-		level: 3
+    level: 3,
+    scrollwheel: false
   };
-  var map = new kakao.maps.Map(container, options);
+  const map = new kakao.maps.Map(container, options);
   //마커생성
-  var markerPosition  = new kakao.maps.LatLng(37.9685396476989, 128.759549653821); 
+  const markerPosition  = new kakao.maps.LatLng(37.9685396476989, 128.759549653821); 
 
 // 마커를 생성합니다
-var marker = new kakao.maps.Marker({
+const marker = new kakao.maps.Marker({
     position: markerPosition
 });
 
