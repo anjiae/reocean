@@ -33,15 +33,21 @@
 
   .work__slide__item {
     /* float: left; */
-    width: 250px;
-    height: 450px;
+    /* width: 280px;
+    height: 450px; */
   }
   .work__item__img {
-    height: 250px;
+    /* height: 250px; */
   }
 }
 
 @media all and (max-width:768px) {
+
+  /* home */
+  .navbar__logo {
+    margin-top: 50%;
+  }
+
 
   /* About reocean */
   .about__content {

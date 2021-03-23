@@ -29,41 +29,77 @@ const slider = document.querySelector('.work__slide');
 const sliderTotal = slideItem.length;
 let slideItemW = 300;
 const margin = 20;
-const prevBtn = document.querySelector('.prev'),
-      nextBtn = document.querySelector('.next');
-//ul너비지정
-slider.style.width = (slideItemW + margin) * sliderTotal +'px';
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
 
-let currentIdx;
-const winW = window.innerWidth;
-function moveSlide(num){
-    currentIdx = num;
-    slider.style.left = -num * (slideItemW + margin) + 'px';
-    if(winW > 1024) {
-      slideItemW = 300;
-    }else if (winW > 520) {
-      slideItemW = 250;
-    }else {
-      slideItemW = 200;
-    }
+//ul너비지정
+// slider.style.width = (slideItemW + margin) * sliderTotal +'px';
+
+makeClone();
+
+function makeClone(){
+  for(let i = 0; i<sliderTotal; i++){
+    const cloneSlide = slideItem[i].cloneNode(true);
+    cloneSlide.classList.add('clone');
+    slider.appendChild(cloneSlide);
+  }
+
+  for(let i = sliderTotal-1; i>=0; i--){
+    const cloneSlide = slideItem[i].cloneNode(true);
+    cloneSlide.classList.add('clone');
+    slider.prepend(cloneSlide);
+  }
+  updateWidth();
+  setPosition();
+
+  setTimeout(function(){
+    slider.classList.add('animated');
+  },100);
 }
 
 
-nextBtn.addEventListener('click', ()=> {
-  if(currentIdx < sliderTotal -4){
-    moveSlide(currentIdx +1);
-  }else {
-    moveSlide(0);
+
+function updateWidth(){
+  const currentSlides = document.querySelectorAll('.work__slide__item');
+  const newSlideCount = currentSlides.length;
+  const newWidth = (slideItemW + margin) * newSlideCount +'px';
+  slider.style.width = newWidth;
+}
+
+function setPosition(){
+  const translateValue = -(slideItemW + margin) * sliderTotal;
+  slider.style.transform = 'translateX('+ translateValue +'px)';
+}
+
+// slide moving
+
+
+let currentIdx = 0;
+
+function moveSlide(num){
+  slider.style.left = -num * (slideItemW + margin) + 'px';
+  currentIdx = num;
+  if(currentIdx === sliderTotal || currentIdx === -sliderTotal) {
+    setTimeout(function(){
+      slider.classList.remove('animated');
+      slider.style.left = '0px';
+      currentIdx = 0;
+    },500);
+    setTimeout(function(){
+      slider.classList.add('animated');
+    },600);
   }
+    workRespns();
+}
+
+
+
+nextBtn.addEventListener('click', ()=> {
+  moveSlide(currentIdx + 1);
 });
 
 prevBtn.addEventListener('click', ()=> {
-  if(currentIdx > 0){
-    moveSlide(currentIdx -1);
-  }else {
-    moveSlide(0);
-  }
-  
+  moveSlide(currentIdx - 1);
 });
 
 //--------------------------------------------------------//

@@ -63,7 +63,7 @@
 }
 
 .navbar__logo {
-  margin-top: 35%;
+  margin-top: 15%;
   text-align: center;
   color: var(--color-light-emerald);
   padding: 40px;
@@ -239,16 +239,22 @@
   line-height: 1.75em;
 }
 
-/* Work List*/
+/* Work List */
+/* 리오션 하는 일 */
+#work .section__container {
+}
 
 .work__slide__wrap {
+  position: relative;
   margin: 0 auto;
+  height: 500px;
   overflow: hidden;
 }
 
 .work__slide {
-  position: relative;
-  transition: all 0.5s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
   /* width: 1920px; */
 }
 
@@ -258,12 +264,16 @@
   clear: both;
 }
 
+.work__slide.animated {
+  transition: all 0.5s ease-out;
+}
+
 .work__slide__item {
   float: left;
   width: 300px;
-  text-align: center;
   height: 500px;
-  margin: 0 10px;
+  text-align: center;
+  margin: 20px 10px;
 }
 
 .work__slide__item__gallery {
