@@ -19,26 +19,31 @@ function handleScroll() {
     }
   });
 }
-
 window.addEventListener('scroll', handleScroll);
+
+
 
 //--------------------------------------------------------//
 //REOCEAN WORK SLIDES
-const slideItem = document.querySelectorAll('.work__slide__item');
-const slider = document.querySelector('.work__slide');  
+const slider = document.querySelector('.work__slide');   //ul
+const slideItem = document.querySelectorAll('.work__slide__item'); //li
 const sliderTotal = slideItem.length;
-let slideItemW = 300;
-const margin = 20;
+const slideItemWidth = 300;
+const slideItemMargin = 20;
+const maxSlides = 4;
+
+let movement = slideItemWidth + slideItemMargin;
+let responsiveMargin = 10;
+let newSlide;
+let newSlideItemWidth = slideItemWidth;
+
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
-//ul너비지정
-// slider.style.width = (slideItemW + margin) * sliderTotal +'px';
-
 makeClone();
-
+// copy slides function
 function makeClone(){
-  for(let i = 0; i<sliderTotal; i++){
+  for(let i = 0; i<maxSlides; i++){
     const cloneSlide = slideItem[i].cloneNode(true);
     cloneSlide.classList.add('clone');
     slider.appendChild(cloneSlide);
@@ -49,35 +54,35 @@ function makeClone(){
     cloneSlide.classList.add('clone');
     slider.prepend(cloneSlide);
   }
-  updateWidth();
-  setPosition();
+  slideLayout(slideItemWidth,slideItemMargin);
+  setSlidePosition();
 
   setTimeout(function(){
     slider.classList.add('animated');
   },100);
 }
 
-
-
-function updateWidth(){
-  const currentSlides = document.querySelectorAll('.work__slide__item');
-  const newSlideCount = currentSlides.length;
-  const newWidth = (slideItemW + margin) * newSlideCount +'px';
-  slider.style.width = newWidth;
+// make slide array layout function
+function slideLayout(sw, sm){
+  newSlide = document.querySelectorAll('.work__slide__item');
+  movement = sw + sm;
+  newSlide.forEach(function(item, index){
+    item.style.left = movement * index + 'px';
+    item.style.width = sw + 'px';
+  });
 }
 
-function setPosition(){
-  const translateValue = -(slideItemW + margin) * sliderTotal;
-  slider.style.transform = 'translateX('+ translateValue +'px)';
+function setSlidePosition(){
+  const ulMovement = -sliderTotal * movement + 'px';
+  slider.style.transform = 'translateX('+ ulMovement+')';
+  slider.classList.add('animated');
 }
 
 // slide moving
-
-
 let currentIdx = 0;
 
 function moveSlide(num){
-  slider.style.left = -num * (slideItemW + margin) + 'px';
+  slider.style.left = -num * movement + 'px';
   currentIdx = num;
   if(currentIdx === sliderTotal || currentIdx === -sliderTotal) {
     setTimeout(function(){
@@ -89,11 +94,86 @@ function moveSlide(num){
       slider.classList.add('animated');
     },600);
   }
-    workRespns();
 }
 
 
+// Auto slide show
+let timer = undefined;
+function autoSlide(){
+  if(timer === undefined) {
+    timer = setInterval(function(){
+      moveSlide(currentIdx +1);
+    },3000);
+  }
+}
+autoSlide();
 
+function stopSlide(){
+  clearInterval(timer);
+  timer = undefined;
+}
+slider.addEventListener('mouseenter', ()=> {
+  stopSlide();
+});
+slider.addEventListener('mouseleave', ()=> {
+  autoSlide();
+});
+nextBtn.addEventListener('mouseenter', ()=> {
+  stopSlide();
+});
+nextBtn.addEventListener('mouseleave', ()=> {
+  autoSlide();
+});
+prevBtn.addEventListener('mouseenter', ()=> {
+  stopSlide();
+});
+prevBtn.addEventListener('mouseleave', ()=> {
+  autoSlide();
+});
+
+
+
+// Slide Responsive
+
+window.addEventListener('resize', function(){
+  const currentWidth = document.querySelector('html').offsetWidth;
+  const slidesWidth = slider.offsetWidth;
+
+  console.log(currentWidth);
+  if(currentWidth < 1024) {
+    newSlideItemWidth = (slidesWidth - (responsiveMargin * maxSlides-1))/3;
+    
+    console.log(slidesWidth);
+    console.log(newSlideItemWidth);
+  }else{
+    newSlideItemWidth = slideItemWidth;
+    responsiveMargin = slideItemMargin;
+
+    console.log(slidesWidth);
+    console.log(newSlideItemWidth);
+  }
+
+  if(currentWidth < 768) {
+    newSlideItemWidth = (slidesWidth - (responsiveMargin * maxSlides-1))/2;
+    
+    console.log(slidesWidth);
+    console.log(newSlideItemWidth);
+  }
+
+  if(currentWidth <= 520) {
+    newSlideItemWidth = slidesWidth;
+    responsiveMargin = 0;
+    
+    console.log(slidesWidth);
+    console.log(newSlideItemWidth);
+  }
+
+  slideLayout(newSlideItemWidth,responsiveMargin);
+  setSlidePosition();
+});
+
+
+// Slide button event
 nextBtn.addEventListener('click', ()=> {
   moveSlide(currentIdx + 1);
 });

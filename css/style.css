@@ -242,20 +242,29 @@
 /* Work List */
 /* 리오션 하는 일 */
 #work .section__container {
+  
+}
+
+.work__slide-container {
+  width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
 }
 
 .work__slide__wrap {
   position: relative;
-  margin: 0 auto;
   height: 500px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .work__slide {
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 1920px; */
+  height: 100%;
+  width: 100%;
 }
 
 .work__slide::after {
@@ -265,16 +274,18 @@
 }
 
 .work__slide.animated {
-  transition: all 0.5s ease-out;
+  transition: 0.5s ease-out;
 }
 
 .work__slide__item {
-  float: left;
+  position: absolute;
   width: 300px;
-  height: 500px;
+  height: 100%;
   text-align: center;
-  margin: 20px 10px;
+  margin-right: 20px;
 }
+
+
 
 .work__slide__item__gallery {
   background-color: rgba(244, 234, 222, 0.3);
@@ -304,30 +315,17 @@
 }
 
 .work__controls span {
-  position: absolute;
-  display: block;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 80px;
+  display: inline-flex;
+  padding: 5px 20px;
+  background-color: var(--color-dark-blue);
   color: var(--color-light-white);
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-.work__controls span:hover {
-  font-size: 90px;
-}
-
-.work__controls span.prev {
-  left: 6%;
-}
-.work__controls span.next {
-  right: 6%;
-}
-
-.work__controls img {
-  width: 100%;
-  height: 100%;
-}
 
 /* 원데이클래스 */
 

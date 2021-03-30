@@ -30,15 +30,16 @@
     height: 420px;
   }
 
+  /* Slides */
+  .work__slide-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-  .work__slide__item {
-    /* float: left; */
-    /* width: 280px;
-    height: 450px; */
+  .work__slide__wrap {
+    width: 100%;
   }
-  .work__item__img {
-    /* height: 250px; */
-  }
+
 }
 
 @media all and (max-width:768px) {
@@ -63,6 +64,15 @@
     text-align: center;
   }
 
+  /* SLIDES */
+
+  .work__slide__wrap {
+    height: 450px;
+  }
+
+  .work__item__img {
+    height: 250px;
+  }
 
   /* 원데이클래스  */
   .class__item__icon {
@@ -93,9 +103,6 @@
   .contact__img__box {
     margin-bottom: 20px;
   }
-
-  
-
 }
 
 @media all and (max-width: 520px) {
@@ -111,23 +118,10 @@
 
   /* slide */
   
-  .work__slide__item {
-    width: 200px;
-    height: 380px;
-  }
-
-  .work__item__img {
-    height: 200px;
-  }
-
-  .work__controls span {
-    font-size: 50px;
+  .work__slide-container {
+    padding: 0 60px;
   }
   
-  .work__controls span:hover {
-    font-size: 60px;
-  }
-
   /* contact */
   .contact__container {
     height: 680px;
